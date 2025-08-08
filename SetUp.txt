@@ -1,0 +1,116 @@
+Step 1: Install Prerequisites
+Open a terminal (Ctrl+Alt+T) and run:
+
+    bash
+    # Update system packages
+    sudo apt update && sudo apt upgrade -y
+
+    # Install Python, pip, and Git
+    sudo apt install python3 python3-pip python3-venv git -y
+
+    # Install TA-Lib (for technical indicators, if needed)
+    sudo apt install build-essential -y
+    wget https://ta-lib.org/hdr-pub/ta-lib-0.4.0-src.tar.gz
+    tar -xzf ta-lib-0.4.0-src.tar.gz
+    cd ta-lib/
+    ./configure --prefix=/usr
+    make
+    sudo make install
+    cd ..
+    rm -rf ta-lib/ ta-lib-0.4.0-src.tar.gz
+    Step 2: Clone Your Trading Bot Repository
+    bash
+    git clone https://github.com/your-username/your-trading-bot.git
+    cd your-trading-bot
+    (Replace the URL with your bot's actual Git repo or navigate to your local bot directory.)
+
+Step 3: Set Up a Python Virtual Environment
+
+    bash
+    # Create a virtual environment
+    python3 -m venv venv
+
+    # Activate it
+    source venv/bin/activate  # Your terminal prompt should now show (venv)
+
+    # Install dependencies
+    pip install -r requirements.txt
+    (If you don’t have a requirements.txt, install manually:
+    pip install pybit pandas numpy python-dotenv)
+
+Step 4: Configure API Keys
+
+    Create a .env file in your bot’s directory:
+
+    bash
+    nano .env
+    Add your Bybit API keys:
+
+    ini
+    API_KEY="your_bybit_api_key"
+    API_SECRET="your_bybit_api_secret"
+    Save & exit (Ctrl+O, Enter, Ctrl+X).
+
+Step 5: Test the Bot
+
+    Run a dry test (without real trades):
+
+    bash
+    python3 your_bot_script.py --test
+    Or run in debug mode (if your bot supports it):
+
+    bash
+    python3 your_bot_script.py --debug
+
+Step 6: Run in Background (Optional)
+
+    Use tmux to keep the bot running after closing the terminal:
+
+    bash
+    # Install tmux if not already available
+    sudo apt install tmux -y
+
+    # Start a new session
+    tmux new -s trading-bot
+
+    # Run your bot inside tmux
+    python3 your_bot_script.py
+
+    # Detach from tmux (press Ctrl+B, then D)
+    To reattach later:
+
+    bash
+    tmux attach -t trading-bot
+    Troubleshooting Common Issues
+    Missing Dependencies:
+    If you get errors like ModuleNotFoundError, install the missing package:
+
+    bash
+    pip install missing_module_name
+    API Connection Errors:
+
+    Check your internet connection.
+
+    Verify API keys in .env.
+
+    Test connectivity to Bybit:
+
+    bash
+    ping api.bybit.com
+    Permission Issues:
+    Make scripts executable:
+
+    bash
+    chmod +x your_bot_script.py
+    Final Tips for Linux Mint
+    Monitor Resources:
+    Use htop to check CPU/RAM usage:
+
+    bash
+    sudo apt install htop -y
+    htop
+    Automate Restarts:
+    Use cron to restart the bot daily (edit crontab with crontab -e):
+
+    bash
+    0 0 * * * /path/to/venv/bin/python3 /path/to/your_bot_script.py >> /path/to/bot.log 2>&1

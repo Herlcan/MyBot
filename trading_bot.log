@@ -1,0 +1,25 @@
+2025-08-07 06:20:28,349 - WARNING - Primary time sync failed - trying secondary methods
+2025-08-07 06:20:30,751 - ERROR - All time synchronization methods failed
+2025-08-07 06:20:30,822 - WARNING - Connection error (attempt 1/5)
+2025-08-07 06:20:40,927 - WARNING - Connection error (attempt 2/5)
+2025-08-07 06:20:51,002 - WARNING - Connection error (attempt 3/5)
+2025-08-07 06:21:01,072 - WARNING - Connection error (attempt 4/5)
+2025-08-07 06:21:11,145 - WARNING - Connection error (attempt 5/5)
+2025-08-07 06:21:21,147 - ERROR - All retries failed. Last error: ConnectionError
+2025-08-07 06:21:21,214 - WARNING - Connection error (attempt 1/5)
+2025-08-07 06:21:33,364 - WARNING - Connection error (attempt 2/5)
+2025-08-07 06:21:43,430 - WARNING - Connection error (attempt 3/5)
+2025-08-07 06:21:53,501 - WARNING - Connection error (attempt 4/5)
+2025-08-07 06:22:03,588 - WARNING - Connection error (attempt 5/5)
+2025-08-07 06:22:13,590 - ERROR - All retries failed. Last error: ConnectionError
+2025-08-07 06:22:13,590 - ERROR - Unified account not available. Please check your Bybit account type.
+2025-08-08 07:50:03,535 - WARNING - Connection error attempt 1
+2025-08-08 07:50:08,714 - WARNING - Connection error attempt 2
+2025-08-08 07:53:01,183 - WARNING - Connection error attempt 1
+2025-08-08 07:53:06,238 - WARNING - Connection error attempt 2
+2025-08-08 07:53:16,305 - WARNING - Connection error attempt 3
+2025-08-08 07:53:41,386 - WARNING - Connection error attempt 4
+2025-08-08 07:54:02,479 - WARNING - Connection error attempt 5
+2025-08-08 07:54:27,480 - ERROR - API failed after retries: ConnectionError
+2025-08-08 07:54:27,480 - WARNING - Could not load instrument list; using defaults for symbol info
+2025-08-08 07:54:27,481 - INFO - Symbol info loaded / cached
